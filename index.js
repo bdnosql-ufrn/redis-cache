@@ -31,7 +31,7 @@ app.get('/fatorial/:value/', async (req, res) => {
         if (!result) {
             console.log('Calculating fatorial...')
             result = fatorial(value);
-            await cache.set(key, result, {EX: 10});
+            await cache.set(key, result, {EX: 60});
         }else {
             console.log('Data from cache!')
         }
